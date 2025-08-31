@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo gradient-text">Portfolio</a>
+
+            <!-- Mobile menu button -->
+            <button id="menu-toggle" class="menu-btn" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <!-- Desktop Menu -->
+            <div class="menu desktop-menu">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="menu mobile-menu hidden">
+            <a href="#home" class="nav-link active">Home</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero section">
+        <div class="container hero-container">
+            <div class="hero-text">
+                <h1>Hi, I'm <span class="gradient-text">Raj</span></h1>
+                <h2>Web Developer</h2>
+                <p>
+                    Dynamic and detail-oriented professional with strong organizational skills and a proven ability to
+                    thrive in fast-paced environments. Committed to meeting tight deadlines while maintaining meticulous
+                    attention to detail. Collaborative team player eager to leverage expertise and contribute to the
+                    overall success of the organization. Passionate about driving results and fostering a positive work
+                    atmosphere.
+                </p>
+                <div class="btn-group">
+                    <a href="#contact" class="btn btn-primary">Hire Me</a>
+                    <a href="#projects" class="btn btn-outline">View Work</a>
+                </div>
+                <div class="socials">
+                    <a href="https://github.com/RajGour617" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/rajgour617?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/raj_gour_617?igsh=ZGR1eGd6Ym1kdHFx" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="https://rajgour617.github.io/PortFolio/" target="_self" class="social-icon"><i class="fab fa-dribbble"></i></a>
+                </div>
+            </div>
+
+            <div class="hero-img">
+                <div class="img-bg"></div>
+                <img src="raj.JPG" alt="Profile" class="profile-pic floating" />
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About <span class="gradient-text">Me</span></h2>
+                <div class="divider"></div>
+            </div>
+
+            <div class="about-container">
+                <div class="about-img">
+                    <div class="img-bg-rect"></div>
+                    <img src="raj3.JPG" alt="About" class="about-photo" />
+                </div>
+
+                <div class="about-text">
+                    <h3>Who am I?</h3>
+                    <p class="muted">
+                        Entry-level Web Developer with hands-on experience in building responsive websites and small
+                        projects using HTML, CSS, JavaScript, and MySQL. Skilled in creating user-friendly designs,
+                        problem-solving, and eager to learn new technologies to grow as a professional developer.
+                    </p>
+
+                    <div class="about-grid">
+                        <div>
+                            <h4>Name: <span>Raj Gour</span></h4>
+                            <h4>Email: <span>rajgour617@gmail.com</span></h4>
+                            <h4>Phone: <span>+91-7000380551</span></h4>
+                        </div>
+                        <div>
+                            <h4>Age: <span>21</span></h4>
+                            <h4>Experience: <span>0 Years</span></h4>
+                            <h4>Location: <span>Indore, India</span></h4>
+                        </div>
+                    </div>
+
+                    <div class="btn-group">
+                        <a href="#" class="btn btn-primary">Download CV</a>
+                        <a href="#contact" class="btn btn-outline">Contact Me</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section skills">
+        <div class="container">
+            <div class="section-title">
+                <h2>My <span class="gradient-text">Skills</span></h2>
+                <div class="divider"></div>
+            </div>
+
+            <div class="skills-grid">
+                <!-- Technical Skills -->
+                <div>
+                    <h3 class="h3">Technical Skills</h3>
+
+                    <div class="skill">
+                        <div class="skill-header"><span>Core Java</span><span>90%</span></div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                        <div class="skill-header"><span>HTML/CSS</span><span>90%</span></div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                        <div class="skill-header"><span>DSA</span><span>60%</span></div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 60%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                        <div class="skill-header"><span>Advanced Java</span><span>50%</span></div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 50%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Professional Skills -->
+                <div>
+                    <h3 class="h3">Professional Skills</h3>
+
+                    <div class="skill">
+                        <div class="skill-header"><span>Communication</span><span>90%</span></div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                        <div class="skill-header"><span>Teamwork</span><span>90%</span></div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                        <div class="skill-header"><span>Problem Solving</span><span>95%</span></div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 95%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                        <div class="skill-header"><span>Creativity</span><span>85%</span></div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tools & Technologies -->
+            <div class="tools">
+                <h3 class="h3 center">Tools & <span class="gradient-text">Technologies</span></h3>
+
+                <div class="tools-grid">
+                    <div class="tool-card card-hover">
+                        <i class="fab fa-html5 icon html"></i>
+                        <span>HTML5</span>
+                    </div>
+                    <div class="tool-card card-hover">
+                        <i class="fab fa-css3-alt icon css"></i>
+                        <span>CSS3</span>
+                    </div>
+                    <div class="tool-card card-hover">
+                        <i class="fas fa-draw-polygon icon polygon"></i>
+                        <span>DSA</span>
+                    </div>
+                    <div class="tool-card card-hover">
+                        <i class="fas fa-coffee icon coffee"></i>
+                        <span>Servlet</span>
+                    </div>
+                    <div class="tool-card card-hover">
+                        <i class="fas fa-code icon code"></i>
+                        <span>JSP</span>
+                    </div>
+                    <div class="tool-card card-hover">
+                        <i class="fab fa-github icon github"></i>
+                        <span>Github</span>
+                    </div>
+                    <div class="tool-card card-hover">
+                        <i class="fab fa-java icon java"></i>
+                        <span>Java</span>
+                    </div>
+                    <div class="tool-card card-hover">
+                        <i class="fas fa-database icon db"></i>
+                        <span>MySQL</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section projects">
+        <div class="container">
+            <div class="section-title">
+                <h2>My <span class="gradient-text">Projects</span></h2>
+                <div class="divider"></div>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="project-image-wrap">
+                        <img src="calculator.png" alt="Calculator">
+                    </div>
+                    <div class="card-body">
+                        <h3>Calculator</h3>
+                        <p class="muted">A simple calculator application built with HTML, CSS, and JavaScript.</p>
+                        <div class="tags"><span>HTML</span><span>CSS</span><span>Javascript</span></div>
+                        <div class="links">
+                            <a href="https://rajgour617.github.io/Calculator/" target="_blank"><i
+                                    class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="#"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-image-wrap">
+                        <img src="project2.jpg" alt="IPL WebPage">
+                    </div>
+                    <div class="card-body">
+                        <h3>IPL WebPage</h3>
+                        <p class="muted">A webpage displaying everything about the Indian Premier League (IPL) including
+                            it's history, teams, and players etc.</p>
+                        <div class="tags"><span>HTML</span><span>CSS</span><span>Javascript</span></div>
+                        <div class="links">
+                            <a href="https://rajgour617.github.io/IPL-WebPage/" target="_blank"><i
+                                    class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="#"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <div class="project-image-wrap">
+                        <img src="portfolio.jpg" alt="Portfolio Website">
+                    </div>
+                    <div class="card-body">
+                        <h3>Portfolio Website</h3>
+                        <p class="muted">A responsive portfolio website built with modern design principles.</p>
+                        <div class="tags"><span>HTML5</span><span>CSS3</span><span>JavaScript</span></div>
+                        <div class="links">
+                            <a href="#"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="#"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <div class="container contact-container">
+            <div class="contact-info">
+                <h3 class="h3">Contact Information</h3>
+                <p class="muted">
+                    Feel free to reach out to me for any questions or opportunities.
+                    I'm always open to discussing new projects, creative ideas or opportunities to be part of your
+                    vision.
+                </p>
+
+                <div class="info-item">
+                    <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div>
+                        <h4>Location</h4>
+                        <p class="muted">Indore, India</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon"><i class="fas fa-envelope"></i></div>
+                    <div>
+                        <h4>Email</h4>
+                        <p class="muted">rajgour617@gmail.com</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon"><i class="fas fa-phone-alt"></i></div>
+                    <div>
+                        <h4>Phone</h4>
+                        <p class="muted">+91-7000380551</p>
+                    </div>
+                </div>
+
+                <div class="socials socials-lg">
+                    <a href="https://github.com/RajGour617" target="_blank" class="social-icon"><i
+                            class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/rajgour617?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                        target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/raj_gour_617?igsh=ZGR1eGd6Ym1kdHFx" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="https://rajgour617.github.io/PortFolio/" target="_self" class="social-icon"><i class="fab fa-dribbble"></i></a>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <h3 class="h3">Send Me a Message</h3>
+                <form class="contact-form-grid">
+                    <div class="grid-row">
+                        <div><label>Your Name</label><input type="text" required class="contact-input"></div>
+                        <div><label>Your Email</label><input type="email" required class="contact-input"></div>
+                    </div>
+                    <div><label>Subject</label><input type="text" required class="contact-input"></div>
+                    <div><label>Message</label><textarea rows="5" required class="contact-input"></textarea></div>
+                    <button type="submit" class="btn btn-primary full">Send Message <i
+                            class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-left">
+                <a href="#" class="logo gradient-text">Portfolio</a>
+                <p class="muted">© 2023 Alex Carter. All rights reserved.</p>
+            </div>
+
+            <div class="footer-right">
+                <a href="https://github.com/RajGour617" target="_blank" class="muted"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/rajgour617?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="muted"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.instagram.com/raj_gour_617?igsh=ZGR1eGd6Ym1kdHFx" class="muted" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://rajgour617.github.io/PortFolio/" class="muted"><i class="fab fa-dribbble"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>Made with <i class="fas fa-heart heart"></i> and lots of <i class="fas fa-coffee coffee"></i></p>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button id="back-to-top" class="back-to-top hidden" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
