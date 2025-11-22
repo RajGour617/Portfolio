@@ -712,3 +712,198 @@ body {
     cursor: pointer;
     z-index: 999;
 }
+
+/* Assignments Section */
+#assignments {
+    background: var(--bg-color);
+    padding: 80px 0;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--text-light);
+    margin-bottom: 40px;
+    font-size: 1.1rem;
+}
+
+.assignment-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+#assignments {
+    .container h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+}
+
+.assignment-card {
+    background: var(--card-bg);
+    border-radius: 15px;
+    padding: 30px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(108, 99, 255, 0.1);
+    display: block;
+    text-decoration: none;
+    color: var(--text-color);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.assignment-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.assignment-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.assignment-card:hover::before {
+    transform: scaleX(1);
+}
+
+.assignment-icon {
+    width: 70px;
+    height: 70px;
+    background: rgba(108, 99, 255, 0.1);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    transition: all 0.3s ease;
+}
+
+.assignment-card:hover .assignment-icon {
+    background: var(--primary-color);
+    color: white;
+    transform: rotate(5deg) scale(1.1);
+}
+
+.assignment-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: var(--text-color);
+    transition: color 0.3s ease;
+}
+
+.assignment-card p {
+    color: var(--text-light);
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.assignment-cta {
+    display: inline-flex;
+    align-items: center;
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.assignment-cta i {
+    margin-left: 8px;
+    transition: transform 0.3s ease;
+}
+
+.assignment-card:hover .assignment-cta {
+    color: var(--secondary-color);
+}
+
+.assignment-card:hover .assignment-cta i {
+    transform: translateX(5px);
+}
+
+/* Dark theme adjustments */
+[data-theme="dark"] .assignment-card {
+    background: var(--card-bg);
+    border-color: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] .assignment-card:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .assignment-container {
+        grid-template-columns: 1fr;
+    }
+
+    .assignment-card {
+        padding: 25px;
+    }
+
+    .assignment-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+}
+
+#certificates .education-card .date {
+    background: rgba(33, 150, 243, 0.15);
+    color: #2196f3;
+}
+
+.education-details p {
+    color: var(--text-light);
+    margin: 0;
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+
+.view-certificate {
+    display: inline-flex;
+    align-items: center;
+    color: var(--primary-color);
+    font-weight: 600;
+    text-decoration: none;
+    margin-top: 15px;
+    font-size: 0.95rem;
+    transition: var(--transition);
+    background: rgba(108, 99, 255, 0.05);
+    padding: 6px 15px;
+    border-radius: 30px;
+    border: 1px solid rgba(108, 99, 255, 0.2);
+}
+
+#certificates .view-certificate {
+    background: rgba(33, 150, 243, 0.05);
+    border-color: rgba(33, 150, 243, 0.2);
+    color: #2196f3;
+}
+
+.view-certificate i {
+    margin-left: 8px;
+    font-size: 0.8rem;
+    transition: var(--transition);
+}
+
+.view-certificate:hover {
+    background: rgba(108, 99, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+#certificates .view-certificate:hover {
+    background: rgba(33, 150, 243, 0.1);
+}
