@@ -112,15 +112,15 @@ document.querySelectorAll('.project-card, .tool-card, .education-card, .assignme
 const contactForm = document.querySelector('.contact-form');
 if (contactForm) {
     const form = contactForm.querySelector('form');
-    form.addEventListener('submit', async function(e) {
+    form.addEventListener('submit', async function (e) {
         e.preventDefault();
-        
+
         const nameInput = document.getElementById('contact-name');
         const emailInput = document.getElementById('contact-email');
         const subjectInput = document.getElementById('contact-subject');
         const messageInput = document.getElementById('contact-message');
         const submitBtn = form.querySelector('button[type="submit"]');
-        
+
         // Validate inputs
         if (!nameInput.value.trim() || !emailInput.value.trim() || !subjectInput.value.trim() || !messageInput.value.trim()) {
             showContactResponse('Please fill in all fields', 'error');
@@ -161,12 +161,12 @@ if (contactForm) {
                 const subject = encodeURIComponent(subjectInput.value);
                 const body = encodeURIComponent(`Name: ${nameInput.value}\nEmail: ${emailInput.value}\n\nMessage:\n${messageInput.value}`);
                 const mailtoLink = `mailto:rajgour617@gmail.com?subject=${subject}&body=${body}`;
-                
+
                 // Create a temporary link and trigger it
                 const a = document.createElement('a');
                 a.href = mailtoLink;
                 a.click();
-                
+
                 showContactResponse('✓ Email client opened. Your message details are ready to send!', 'success');
                 setTimeout(() => form.reset(), 1500);
             } catch (err) {
@@ -183,7 +183,7 @@ if (contactForm) {
 function showContactResponse(message, type) {
     const formContainer = document.querySelector('.contact-form');
     let responseDiv = formContainer.querySelector('.contact-form-response');
-    
+
     if (!responseDiv) {
         responseDiv = document.createElement('div');
         responseDiv.className = `contact-form-response ${type}`;
@@ -192,10 +192,10 @@ function showContactResponse(message, type) {
     } else {
         responseDiv.className = `contact-form-response ${type}`;
     }
-    
+
     responseDiv.textContent = message;
     responseDiv.style.display = 'block';
-    
+
     // Auto-hide after 6 seconds
     setTimeout(() => {
         responseDiv.style.opacity = '0';

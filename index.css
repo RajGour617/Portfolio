@@ -376,6 +376,7 @@ body {
 
 /* Floating animation */
 @keyframes float {
+
     0%,
     100% {
         transform: translateY(0);
@@ -502,7 +503,7 @@ body {
     }
 }
 
-.skills > .container > div {
+.skills>.container>div {
     padding: 2rem;
     background: linear-gradient(135deg, rgba(14, 165, 233, 0.05), rgba(126, 34, 206, 0.05));
     border: 1px solid #334155;
@@ -510,7 +511,7 @@ body {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.skills > .container > div:hover {
+.skills>.container>div:hover {
     border-color: rgba(14, 165, 233, 0.3);
     box-shadow: 0 15px 40px rgba(14, 165, 233, 0.1);
     transform: translateY(-5px);
@@ -891,52 +892,52 @@ body {
     box-shadow: 0 8px 20px rgba(14, 165, 233, 0.3);
 }
 
-    /* Stronger selector to override .links a specificity and ensure project buttons are visible */
-    .links a.project-link {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.6rem;
-        padding: 0.75rem 1.5rem;
-        background: linear-gradient(135deg, rgba(14, 165, 233, 0.12), rgba(126, 34, 206, 0.12));
-        color: var(--primary) !important;
-        border: 2px solid rgba(14, 165, 233, 0.25) !important;
-        text-decoration: none;
-        border-radius: 50px;
-        font-size: 0.95rem;
-        font-weight: 600;
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        position: relative;
-        overflow: hidden;
-        z-index: 1;
-    }
+/* Stronger selector to override .links a specificity and ensure project buttons are visible */
+.links a.project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, rgba(14, 165, 233, 0.12), rgba(126, 34, 206, 0.12));
+    color: var(--primary) !important;
+    border: 2px solid rgba(14, 165, 233, 0.25) !important;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
 
-    .links a.project-link i {
-        font-size: 0.95rem;
-        transition: all 0.3s ease;
-        color: inherit;
-    }
+.links a.project-link i {
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    color: inherit;
+}
 
-    .links a.project-link::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 0;
-        height: 100%;
-        background: linear-gradient(90deg, var(--primary), var(--secondary));
-        transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        z-index: -1;
-    }
+.links a.project-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: -1;
+}
 
-    .links a.project-link:hover {
-        color: white !important;
-        transform: translateY(-4px);
-        box-shadow: 0 12px 30px rgba(14, 165, 233, 0.25);
-    }
+.links a.project-link:hover {
+    color: white !important;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(14, 165, 233, 0.25);
+}
 
-    .links a.project-link:hover::before {
-        width: 100%;
-    }
+.links a.project-link:hover::before {
+    width: 100%;
+}
 
 
 /* ========== Contact ========== */
@@ -1066,6 +1067,7 @@ body {
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -1102,6 +1104,7 @@ body {
     gap: 1.5rem;
     align-items: center;
 }
+
 .footer-right a {
     width: 40px;
     height: 40px;
@@ -1132,6 +1135,7 @@ body {
     .project-card {
         min-height: 420px;
     }
+
     .project-image-wrap {
         height: 220px;
     }
@@ -1141,6 +1145,7 @@ body {
     .project-card {
         min-height: 480px;
     }
+
     .project-image-wrap {
         height: 260px;
     }
@@ -1395,6 +1400,7 @@ body {
 .assignment-card:hover .assignment-cta i {
     transform: translateX(4px);
 }
+
 .project-card {
     min-height: 380px;
 }
@@ -1403,6 +1409,7 @@ body {
     .project-card {
         min-height: 420px;
     }
+
     .project-image-wrap {
         height: 220px;
     }
@@ -1412,6 +1419,7 @@ body {
     .project-card {
         min-height: 480px;
     }
+
     .project-image-wrap {
         height: 260px;
     }
@@ -1510,6 +1518,7 @@ body {
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
