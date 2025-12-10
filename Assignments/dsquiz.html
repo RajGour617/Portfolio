@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Online Quiz - Data Science Assignment</title>
+    <title>Online Gnomio Quiz - Data Science Assignment</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../index.css">
     <style>
@@ -27,16 +27,12 @@
         .content-section {
             min-height: 100vh;
             padding: 6rem 0 4rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 1.5rem;
-            width: 100%;
         }
 
         .breadcrumb {
@@ -60,46 +56,84 @@
             background: rgba(14, 165, 233, 0.2);
         }
 
-        .coming-soon-card {
-            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-            border: 2px solid rgba(14, 165, 233, 0.1);
-            border-radius: 20px;
-            padding: 4rem 2rem;
+        .page-header {
             text-align: center;
-            max-width: 600px;
-            margin: 0 auto;
-            position: relative;
+            margin-bottom: 3rem;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .page-header .gradient-text {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .page-header .divider {
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            margin: 1rem auto;
+            border-radius: 2px;
+        }
+
+        .content-grid {
+            display: grid;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .video-card {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            border: 1px solid rgba(14, 165, 233, 0.1);
+            border-radius: 16px;
             overflow: hidden;
-            animation: slideInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 20px 60px rgba(14, 165, 233, 0.1);
-            transition: all 0.4s ease;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            animation: slideInUp 0.6s ease-out forwards;
+            opacity: 0;
+            position: relative;
         }
 
-        .coming-soon-card::before {
+        .video-card::before {
             content: '';
             position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(14, 165, 233, 0.15), transparent);
-            animation: pulse 6s ease-in-out infinite;
-            pointer-events: none;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(14, 165, 233, 0.1), transparent);
+            z-index: 1;
+            transition: left 0.6s ease;
         }
 
-        .coming-soon-card::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(45deg, transparent 30%, rgba(14, 165, 233, 0.05), transparent 70%);
-            animation: shimmer 3s infinite;
-            pointer-events: none;
+        .video-card:hover::before {
+            left: 100%;
+        }
+
+        .video-card:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .video-card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .video-card:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .video-card:nth-child(4) {
+            animation-delay: 0.4s;
         }
 
         @keyframes slideInUp {
             from {
                 opacity: 0;
-                transform: translateY(50px);
+                transform: translateY(40px);
             }
 
             to {
@@ -108,167 +142,100 @@
             }
         }
 
-        @keyframes pulse {
-
-            0%,
-            100% {
-                transform: translate(0, 0) scale(1);
-            }
-
-            50% {
-                transform: translate(-30px, -30px) scale(1.1);
-            }
-        }
-
-        @keyframes shimmer {
-            0% {
-                transform: translateX(-100%);
-            }
-
-            100% {
-                transform: translateX(100%);
-            }
-        }
-
-        .coming-soon-card:hover {
+        .video-card:hover {
+            transform: translateY(-12px);
             border-color: rgba(14, 165, 233, 0.3);
-            box-shadow: 0 30px 80px rgba(14, 165, 233, 0.2);
-            transform: translateY(-8px);
+            box-shadow: 0 24px 60px rgba(14, 165, 233, 0.2);
         }
 
-        .coming-soon-card:hover .icon-large {
-            transform: scale(1.15) rotate(8deg);
+        .video-card:hover .video-card-header {
+            background: linear-gradient(135deg, rgba(14, 165, 233, 0.15), rgba(126, 34, 206, 0.15));
+            border-bottom-color: rgba(14, 165, 233, 0.2);
         }
 
-        .coming-soon-content {
+        .video-card:hover .section-badge {
+            transform: scale(1.05) rotate(2deg);
+        }
+
+        .video-card:hover .video-wrapper iframe {
+            box-shadow: 0 16px 48px rgba(14, 165, 233, 0.15);
+            transform: scale(1.02);
+        }
+
+        .video-card-header {
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(14, 165, 233, 0.1), rgba(126, 34, 206, 0.1));
+            border-bottom: 1px solid rgba(14, 165, 233, 0.1);
+            transition: all 0.3s ease;
             position: relative;
             z-index: 2;
         }
 
-        .icon-large {
-            font-size: 4.5rem;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            margin-bottom: 1.5rem;
-            animation: bounce 3s ease-in-out infinite;
-            transition: all 0.3s ease;
+        .video-card-header h2 {
+            margin: 0;
+            font-size: 1.75rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            line-height: 1.4;
+            font-weight: 700;
+        }
+
+        .section-badge {
             display: inline-flex;
             align-items: center;
-            justify-content: center;
-            width: 100px;
-            height: 100px;
-            background: linear-gradient(135deg, rgba(14, 165, 233, 0.15), rgba(126, 34, 206, 0.15));
-            border-radius: 50%;
-            border: 2px solid rgba(14, 165, 233, 0.2);
-            box-shadow: 0 8px 24px rgba(14, 165, 233, 0.1) inset;
-            margin: 0 auto 1.5rem;
-        }
-
-        .icon-large i {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            font-size: 3rem;
-        }
-
-        @keyframes bounce {
-
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-20px);
-            }
-        }
-
-        .coming-soon-card h1 {
-            font-size: 2.8rem;
-            margin-bottom: 1rem;
+            gap: 0.5rem;
+            padding: 0.6rem 1.2rem;
             background: linear-gradient(90deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            font-weight: 800;
-            letter-spacing: -0.5px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: white;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(14, 165, 233, 0.2);
         }
 
-        .coming-soon-card p {
+        .section-badge i {
+            transition: transform 0.3s ease;
+        }
+
+        .video-card:hover .section-badge i {
+            transform: rotate(360deg) scale(1.1);
+        }
+
+        .video-wrapper {
+            padding: 2rem;
+            display: flex;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 2;
+        }
+
+        .video-wrapper iframe {
+            width: 100%;
+            max-width: 700px;
+            height: auto;
+            aspect-ratio: 16/9;
+            border-radius: 12px;
+            border: 1px solid rgba(14, 165, 233, 0.2);
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 32px rgba(14, 165, 233, 0.1);
+        }
+
+        .video-description {
+            padding: 0 2rem 2rem;
             color: var(--muted);
-            font-size: 1.1rem;
             line-height: 1.8;
-            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 2;
+            font-size: 1rem;
             transition: color 0.3s ease;
         }
 
-        .coming-soon-card:hover p {
+        .video-card:hover .video-description {
             color: #cbd5e1;
-        }
-
-        .status-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.6rem;
-            padding: 0.85rem 1.8rem;
-            background: linear-gradient(90deg, rgba(14, 165, 233, 0.2), rgba(126, 34, 206, 0.2));
-            border: 2px solid rgba(14, 165, 233, 0.3);
-            border-radius: 50px;
-            color: var(--primary);
-            font-weight: 700;
-            font-size: 1rem;
-            margin-top: 1.5rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 16px rgba(14, 165, 233, 0.1);
-        }
-
-        .status-badge i {
-            animation: pulse-icon 1.5s ease-in-out infinite;
-        }
-
-        @keyframes pulse-icon {
-
-            0%,
-            100% {
-                transform: scale(1);
-                opacity: 1;
-            }
-
-            50% {
-                transform: scale(1.2);
-                opacity: 0.8;
-            }
-        }
-
-        .coming-soon-card:hover .status-badge {
-            border-color: rgba(14, 165, 233, 0.6);
-            box-shadow: 0 8px 24px rgba(14, 165, 233, 0.2);
-            transform: scale(1.05);
-        }
-
-        .divider {
-            width: 80px;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            margin: 1.5rem auto 2rem;
-            border-radius: 2px;
-            box-shadow: 0 2px 8px rgba(14, 165, 233, 0.2);
-            animation: expandWidth 0.8s ease-out;
-        }
-
-        @keyframes expandWidth {
-            from {
-                width: 0;
-                opacity: 0;
-            }
-
-            to {
-                width: 80px;
-                opacity: 1;
-            }
         }
 
         @media (max-width: 768px) {
@@ -276,21 +243,31 @@
                 padding: 0 1rem;
             }
 
-            .coming-soon-card {
-                padding: 2.5rem 1.5rem;
-                border-radius: 12px;
-            }
-
-            .coming-soon-card h1 {
+            .page-header h1 {
                 font-size: 2rem;
             }
 
-            .icon-large {
-                font-size: 3rem;
+            .video-card-header {
+                padding: 1.5rem;
             }
 
-            .coming-soon-card p {
-                font-size: 1rem;
+            .video-card-header h2 {
+                font-size: 1.35rem;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .video-wrapper {
+                padding: 1.5rem;
+            }
+
+            .video-wrapper iframe {
+                max-width: 100%;
+            }
+
+            .video-description {
+                padding: 0 1.5rem 1.5rem;
+                font-size: 0.95rem;
             }
         }
     </style>
@@ -305,19 +282,84 @@
                 </a>
             </div>
 
-            <div class="coming-soon-card">
-                <div class="coming-soon-content">
-                    <div class="icon-large">
-                        <i class="fas fa-question-circle"></i>
+            <div class="page-header">
+                <h1>Online Gnomio <span class="gradient-text">Quiz</span></h1>
+                <div class="divider"></div>
+            </div>
+
+            <div class="content-grid">
+                <div class="video-card">
+                    <div class="video-card-header">
+                        <h2>
+                            <span class="section-badge">
+                                <i class="fas fa-video"></i>
+                            </span>
+                            Q.1 - Q.10
+                        </h2>
                     </div>
-                    <h1>Coming Soon</h1>
-                    <div class="divider"></div>
-                    <p>Data Science online quiz discussion and detailed video solutions will be uploaded soon.</p>
-                    <p>Stay tuned for comprehensive explanations and assessment reviews.</p>
-                    <div class="status-badge">
-                        <i class="fas fa-clock"></i> In Preparation
+                    <div class="video-wrapper">
+                        <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/TYH5iyP94e4?si=s0mQ-AlydwGSwRLa"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
                 </div>
+
+                <div class="video-card">
+                    <div class="video-card-header">
+                        <h2>
+                            <span class="section-badge">
+                                <i class="fas fa-video"></i>
+                            </span>
+                            Q.11 - Q.20
+                        </h2>
+                    </div>
+                    <div class="video-wrapper">
+                        <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/FqTKw1WjH5U?si=FDnAt73rLFg_gk6Z"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-card-header">
+                        <h2>
+                            <span class="section-badge">
+                                <i class="fas fa-video"></i>
+                            </span>
+                            Q.21 - Q.29
+                        </h2>
+                    </div>
+                    <div class="video-wrapper">
+                        <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/J3TL_GVT4C0?si=jEhmrzmNwvAt0F-u"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-card-header">
+                        <h2>
+                            <span class="section-badge">
+                                <i class="fas fa-video"></i>
+                            </span>
+                            Q.30 - Q.40
+                        </h2>
+                    </div>
+                    <div class="video-wrapper">
+                        <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/72JSSI8pbC8?si=UWqS9HEAJctzoNes"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
